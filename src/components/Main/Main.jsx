@@ -1,5 +1,6 @@
 import React from "react";
-import './../App.css';
+import './Main.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Main = () => {
     return (
@@ -10,18 +11,7 @@ const Main = () => {
         <div>
           ava+description
         </div>
-        <div>
-          My post
-          <div>
-            New post
-          </div>
-          <div>
-            post 1
-          </div>
-          <div>
-            post 2
-          </div>
-        </div>
+        <MyPosts />
       </main>
     )
 }

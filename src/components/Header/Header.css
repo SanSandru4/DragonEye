@@ -1,0 +1,10 @@
+.app__header {
+    grid-area: h;
+    background-color: #E93636;
+   }
+   
+   .header__img {
+     margin: 5px 0 0 25px;
+     height: 50px;
+     box-sizing: border-box;
+   }

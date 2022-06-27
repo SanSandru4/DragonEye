@@ -1,0 +1,19 @@
+.app__nav {
+    padding-top: 20px;
+    width: 100%;
+    grid-area: n;
+    background-color: #E93636;
+  }
+  
+  .nav__blok {
+    padding: 15px 0 10px 25px;
+  }
+  
+  .nav__link {
+    text-decoration: none;
+    color: #271E1E;
+  }
+  
+  .nav__link:hover {
+    color: #FFF;
+  }
