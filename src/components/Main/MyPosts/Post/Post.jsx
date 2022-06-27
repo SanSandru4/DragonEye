@@ -1,14 +1,20 @@
 import React from "react";
+import Like from "./Like/Like";
 import './Post.css';
 
-const Post = () => {
+const randNum = () => {
+  const min = 1;
+  const max = 10;
+  const rand = min + Math.floor(Math.random() * (max - min));
+  return rand;
+}
+
+const Post = (props) => {
     return (
           <div>
-            New post
+            {props.message}
             <div>
-              <span>
-                like
-              </span>
+              <Like pushLike={randNum()}/>
             </div>
           </div>
     )
