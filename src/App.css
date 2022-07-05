@@ -6,3 +6,9 @@
   grid-template-rows: 60px 10fr 60px;
   grid-template-columns: 2fr 10fr;
 }
+
+.app__wrapper-content {
+    grid-area: m;
+    background-color: #FFF;
+  
+  }
