@@ -1,24 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Navigation.css';
 
 const Navigation = () => {
     return (
-        <nav className='app__nav nav'>
+        <nav className='app__nav'>
         <div className='nav__blok'>
-          <Link className='nav__link' to='/profile'>Profile</Link>
+          <NavLink activeClassName='active' to='/profile'>Profile</NavLink>
         </div>
         <div className='nav__blok'>
-          <Link className='nav__link' to='/massages'>Massages</Link>
+          <NavLink activeClassName='active' to='/massages'>Massages</NavLink>
         </div>
         <div className='nav__blok'>
-          <Link className='nav__link' to='/news'>News</Link>
+          <NavLink activeClassName='active' to='/news'>News</NavLink>
         </div>
         <div className='nav__blok'>
-          <Link className='nav__link' to='/music'>Music</Link>
+          <NavLink activeClassName='active' to='/music'>Music</NavLink>
         </div>
         <div className='nav__blok'>
-          <Link className='nav__link' to='/settings'>Settings</Link>
+          <NavLink activeClassName='active' to='/settings'>Settings</NavLink>
         </div>
       </nav>
     )

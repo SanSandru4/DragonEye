@@ -5,7 +5,7 @@ import Navigation from './components/Navigation/Navigation';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 const App = () => {

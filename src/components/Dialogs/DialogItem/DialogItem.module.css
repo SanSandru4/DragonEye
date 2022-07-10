@@ -1,0 +1,7 @@
+.dialogs_items {
+    padding: 10px 0 0 15px;
+}
+
+.dialogs_items .active {
+    color: #E93636;
+}

@@ -9,11 +9,16 @@
     padding: 15px 0 10px 25px;
   }
   
-  .nav__link {
+  .nav__blok a {
     text-decoration: none;
     color: #271E1E;
   }
   
-  .nav__link:hover {
+  .nav__blok a:hover {
     color: #FFF;
+    text-shadow: 2px 2px 5px #FFF;
+  }
+  
+  .active {
+    text-shadow: 2px 2px 5px #2E0505;
   }
