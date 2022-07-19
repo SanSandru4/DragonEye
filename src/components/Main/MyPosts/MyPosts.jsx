@@ -2,7 +2,11 @@ import React from "react";
 import './MyPosts.css';
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+    let postData = props.post;
+    let postElements = postData.map( p => <Post message = { p.message } />);
+
     return (
         <div className="postBlok">
           <h3>My post</h3>
@@ -15,8 +19,7 @@ const MyPosts = () => {
             </div>
           </div>
           <div>
-            <Post message='How are you?'/>
-            <Post message="It's my first post"/>
+            { postElements }
           </div>
         </div>
     )

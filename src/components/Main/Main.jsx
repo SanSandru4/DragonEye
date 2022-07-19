@@ -3,11 +3,11 @@ import './Main.css';
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo"
 
-const Main = () => {
+const Main = (props) => {
     return (
       <main className='main'>
         <ProfileInfo />
-        <MyPosts />
+        <MyPosts post = { props.posts }/>
       </main>
     )
 }

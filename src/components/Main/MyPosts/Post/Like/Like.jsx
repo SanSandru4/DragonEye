@@ -3,9 +3,9 @@ import './Like.css';
 
 const Like = (props) => {
     return (
-              <span>
-                like {props.pushLike}
-              </span>
+        <span>
+          like {props.pushLike}
+        </span>
     )
 }
 
