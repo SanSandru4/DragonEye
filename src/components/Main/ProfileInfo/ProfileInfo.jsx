@@ -6,7 +6,7 @@ const ProfileInfo = () => {
 
     return (
         <div>
-            <div>
+            <div className={ mod.main__imgBlok}>
                 <img className={ mod.main__image } src={ UrlImage } alt='' />
             </div>
             <div className={ mod.descriptionBlok }>

@@ -1,5 +1,12 @@
 .main__image {
+    margin-top: -250px;
     width: 100%;
+}
+
+.main__imgBlok {
+    width: 125%;
+    height: 235px;
+    overflow: hidden;
 }
 
 .descriptionBlok {

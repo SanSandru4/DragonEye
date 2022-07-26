@@ -4,8 +4,8 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let postData = props.post;
-    let postElements = postData.map( p => <Post message = { p.message } />);
+    let postData = props.state.posts;
+    let postElements = postData.map( p => ( <Post message = { p.message } /> ) );
 
     return (
         <div className="postBlok">

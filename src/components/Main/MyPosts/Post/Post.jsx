@@ -12,9 +12,9 @@ const randNum = () => {
 const Post = (props) => {
     return (
           <div>
-            {props.message}
+            { props.message }
             <div>
-              <Like pushLike={randNum()}/>
+              <Like pushLike = { randNum() } />
             </div>
           </div>
     )

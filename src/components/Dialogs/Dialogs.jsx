@@ -7,11 +7,11 @@ import mod from './Dialogs.module.css';
 
 const Dialogs = (props) => {
 
-    let dialogsData = props.dialogs;
-    let newDialogs = dialogsData.map( d => <DialogItem name = { d.name } id = { d.id } /> );
+    let dialogs = props.state.dialogs;
+    let newDialogs = dialogs.map((d) => <DialogItem name = { d.name } id = { d.id } /> );
 
-    let messagesData = props.messages;
-    let newMessage = messagesData.map( m => <Messages message = { m.message } />);
+    let messages = props.state.messages;
+    let newMessage = messages.map((m) => <Messages message = { m.message } />);
 
     return (
         <div className = { mod.dialogs_main }>

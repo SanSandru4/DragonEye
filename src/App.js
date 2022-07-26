@@ -9,21 +9,15 @@ import { Routes, Route } from 'react-router-dom';
 
 
 const App = (props) => {
-
-  // let propsApp = props.stateApp;
-
   return (
       <div className='app__wrapper'>
         <Header />
         <Navigation />
         <div className='app__wrapper-content'>
           <Routes>
-            <Route path='/' render = { () => <Main posts = { props.stateApp.postData }/> } />
-            <Route path='/profile' render = { () => <Main posts = { props.stateApp.postData}/> } />
-            <Route path='/messages' render = { () => <Dialogs 
-                                                  dialogs = { props.stateApp.dialogsData } 
-                                                  messages = { props.stateApp.messagesData } /> 
-                                              } />
+            <Route path='/' element = { <Main state = { props.state.blogPage } /> } />
+            <Route path='/profile' element = { <Main state = { props.state.blogPage } /> } />
+            <Route path='/messages' element = { <Dialogs state = { props.state.dialogPage } /> } />
           </Routes>
         </div>
         <Footer />
