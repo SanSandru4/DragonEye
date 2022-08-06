@@ -15,8 +15,14 @@ const App = (props) => {
         <Navigation />
         <div className='app__wrapper-content'>
           <Routes>
-            <Route path='/' element = { <Main state = { props.state.blogPage } /> } />
-            <Route path='/profile' element = { <Main state = { props.state.blogPage } /> } />
+            <Route path='/' element = { <Main state = { props.state.blogPage }
+                                              addPost = { props.addPost }
+                                              updateNewPost = { props.updateNewPost } /> }
+            />
+            <Route path='/profile' element = { <Main state = { props.state.blogPage }
+                                                    addPost = { props.addPost }
+                                                    updateNewPost = { props.updateNewPost } /> }
+            />
             <Route path='/messages' element = { <Dialogs state = { props.state.dialogPage } /> } />
           </Routes>
         </div>

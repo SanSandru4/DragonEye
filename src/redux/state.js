@@ -1,4 +1,6 @@
-let state = {
+import { rerenderingEntireTree } from './../render';
+
+export let state = {
     dialogPage: {
       dialogs: [
         { id: 1, name: 'Dimon' },
@@ -17,11 +19,29 @@ let state = {
       ]
     },
     blogPage: {
-      posts: [
-        {id: 1, message: 'How are you?', likesCount: 12},
-        {id: 2, message: "It's my first post", likesCount: 9}
-      ]
+        posts: [
+            {id: 1, message: 'How are you?', likesCount: 12},
+            {id: 2, message: "It's my first post", likesCount: 9}
+        ],
+        newPostText: 'new text message!'
     }
 }
 
-export default state;
+export let addPost = () => {
+    let newPost = {
+        id: 3,
+        message: state.blogPage.newPostText,
+        likesCount: 0
+    };
+
+    state.blogPage.posts.push(newPost);
+    state.blogPage.newPostText = '';
+    rerenderingEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.blogPage.newPostText = newText;
+  rerenderingEntireTree(state);
+}
+
+

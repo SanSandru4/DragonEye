@@ -13,6 +13,13 @@ const Dialogs = (props) => {
     let messages = props.state.messages;
     let newMessage = messages.map((m) => <Messages message = { m.message } />);
 
+    let newMessageSend = React.createRef();
+
+    let btnSend = () => {
+        let messageText = newMessageSend.current.value;
+        console.log(messageText);
+    };
+
     return (
         <div className = { mod.dialogs_main }>
             <div className = { mod.dialogs_items }>
@@ -21,8 +28,12 @@ const Dialogs = (props) => {
             <div className = { mod.massages }>
                 { newMessage }
             </div>
+            <div>
+                <textarea ref = { newMessageSend }></textarea>
+                <button onClick = { btnSend }>Send</button>
+            </div>
         </div>
     )
 }
 
-export default Dialogs
+export default Dialogs;
