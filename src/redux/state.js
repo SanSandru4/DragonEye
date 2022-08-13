@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 export let store = {
     _state: {
         dialogPage: {
@@ -25,29 +28,38 @@ export let store = {
             newPostText: 'new text message!'
         }
     },
-    getState() {
-        return this._state;
-    },
     _callSubscriber() {
         console.log('State it was change');
     },
-    addPost() {
-        let newPost = {
-            id: 3,
-            message: this._state.blogPage.newPostText,
-            likesCount: 0
-        };
-        this._state.blogPage.posts.push(newPost);
-        this._state.blogPage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.blogPage.newPostText = newText;
-        this._callSubscriber(this._state);
+
+    getState() {
+        return this._state;
     },
     subscribe(observer) {
         this._callSubscriber = observer;
-    }, 
+    },
+
+    dispatch(action) {
+        if (action.type === ADD_POST) {
+            let newPost = {
+                id: 3,
+                message: this._state.blogPage.newPostText,
+                likesCount: 0
+            };
+            this._state.blogPage.posts.push(newPost);
+            this._state.blogPage.newPostText = '';
+            this._callSubscriber(this._state);
+        } 
+        else if (action.type === UPDATE_NEW_POST_TEXT) {
+            this._state.blogPage.newPostText = action.text;
+            this._callSubscriber(this._state);
+        } 
+    }
 }
- 
-// export default store;
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const updateNewPostTextActionCreator = (text) => ({
+        type: UPDATE_NEW_POST_TEXT, text: text
+});
+
