@@ -1,22 +1,20 @@
 import React from "react";
 import './MyPosts.css';
 import Post from "./Post/Post"; 
-import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/blog-reducer";
 
 const MyPosts = (props) => {
 
-    let postData = props.state.posts;
+    let postData = props.posts;
     let postElements = postData.map( p => ( <Post message = { p.message } like = { p.likesCount }/> ) );
     let newPostElement = React.createRef();
 
-    let addPost = () => { 
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => { 
+        props.addPost();
     };
 
     let OnPostChange = () => {
         let text = newPostElement.current.value; 
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
     };
 
     return (
@@ -27,7 +25,7 @@ const MyPosts = (props) => {
               <textarea onChange = { OnPostChange } ref = { newPostElement } value = { props.newPostText } />
             </div>
             <div>
-              <button type="Submit" onClick = { addPost }>Add post</button>
+              <button type="Submit" onClick = { onAddPost }>Add post</button>
             </div>
           </div>
           <div>

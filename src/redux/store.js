@@ -1,6 +1,6 @@
-import { blogReducer } from '../redux/blog-reducer';
-import { dialogReducer } from '../redux/dialog-reducer';
-// import { sidebarReducer } from '../redux/sidebar-reducer'
+import { blogReducer } from './blog-reducer';
+import { dialogReducer } from './dialog-reducer';
+import { sidebarReducer } from '../redux/sidebar-reducer'
 
 
 export let store = {
@@ -47,34 +47,10 @@ export let store = {
 
         this._state.blogPage = blogReducer(this._state.blogPage, action);
         this._state.dialogPage = dialogReducer(this._state.dialogPage, action);
-        // this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
         this._callSubscriber(this._state);
 
-        // if (action.type === ADD_POST) {
-        //     let newPost = {
-        //         id: 3,
-        //         message: this._state.blogPage.newPostText,
-        //         likesCount: 0
-        //     };
-        //     this._state.blogPage.posts.push(newPost);
-        //     this._state.blogPage.newPostText = '';
-        //     this._callSubscriber(this._state);
-        // } 
-        // else if (action.type === UPDATE_NEW_POST_TEXT) {
-        //     this._state.blogPage.newPostText = action.text;
-        //     this._callSubscriber(this._state);
-        // } 
-        // else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        //     this._state.dialogPage.newMessageBody = action.body;
-        //     this._callSubscriber(this._state);
-        // }
-        // else if (action.type === SEND_MESSAGE) {
-        //     let body = this._state.dialogPage.newMessageBody;
-        //     this._state.dialogPage.newMessageBody = '';
-        //     this._state.dialogPage.messages.push({ id: 6, message: body });
-        //     this._callSubscriber(this._state);
-        // }
     }
 }
 
@@ -87,3 +63,28 @@ export let store = {
 // export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
 
 // export const updateNewMessageBodyCreator = (body) => ({ type: UPDATE_NEW_MESSAGE_BODY, body: body });
+
+// if (action.type === ADD_POST) {
+//     let newPost = {
+//         id: 3,
+//         message: this._state.blogPage.newPostText,
+//         likesCount: 0
+//     };
+//     this._state.blogPage.posts.push(newPost);
+//     this._state.blogPage.newPostText = '';
+//     this._callSubscriber(this._state);
+// } 
+// else if (action.type === UPDATE_NEW_POST_TEXT) {
+//     this._state.blogPage.newPostText = action.text;
+//     this._callSubscriber(this._state);
+// } 
+// else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+//     this._state.dialogPage.newMessageBody = action.body;
+//     this._callSubscriber(this._state);
+// }
+// else if (action.type === SEND_MESSAGE) {
+//     let body = this._state.dialogPage.newMessageBody;
+//     this._state.dialogPage.newMessageBody = '';
+//     this._state.dialogPage.messages.push({ id: 6, message: body });
+//     this._callSubscriber(this._state);
+// }
